@@ -1,0 +1,57 @@
+<div id="demo">
+</div>
+<style>
+table,tr,td, th{
+	border:3px solid gray;
+	border-collapse: collapse;
+	width:30%;
+	text-align: center;
+}
+</style>
+<button onclick="validate()">Click</button>
+
+<script>
+
+function validate(){
+var person=[
+{Name:"pooja", Id:01},
+{Name:"nandhini" , Id:02},
+{Name:"chinnu", Id:03},
+{Name:"jyo", Id:04},
+{Name:"swathi", Id:05}
+]
+var tbl=document.createElement("table")
+var trh=document.createElement("tr")
+var row=person.length;
+var col=Object.keys(person[0]).length;
+var arr = Object.keys(person[0]);
+for(var th=0;th<col;th++){
+	tblh=document.createElement('th');
+	prop=document.createTextNode(arr[th]);
+	tblh.appendChild(prop)
+	thd=document.createElement("td")
+	btn=document.createElement("button")
+	btntext=document.createTextNode("ViewMore")
+   trh.appendChild(tblh)
+}
+
+ tbl.appendChild(trh)  
+
+
+
+for(var i=0;i<row;i++){
+	var tblrow=document.createElement("tr")
+	for(var c=0;c<col;c++){
+
+		var tblcol=document.createElement("td")
+		var cd=arr[c];
+	
+		var data=document.createTextNode(person[i][cd])
+		tblcol.appendChild(data)
+		tblrow.appendChild(tblcol)
+	}
+	tbl.appendChild(tblrow)
+}
+demo.appendChild(tbl)
+}
+</script>
